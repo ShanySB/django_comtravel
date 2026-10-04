@@ -48,7 +48,7 @@ class Place(models.Model):
     class Meta:
         contraints = [
             models.UniqueConstraint(
-                feilds=["destination", "slug"],
+                fields=["destination", "slug"],
                 name="unique_place_slug_per_destination"
             )
         ]
