@@ -46,7 +46,7 @@ class Place(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        contraints = [
+        constraints = [
             models.UniqueConstraint(
                 fields=["destination", "slug"],
                 name="unique_place_slug_per_destination"
