@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 
 class Destination(models.Model):
@@ -9,6 +10,7 @@ class Destination(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     country = models.CharField(max_length=100)
     description = models.TextField()
+    image = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -22,9 +24,9 @@ class Place(models.Model):
     """
     CATEGORY_CHOICES = [
         ("attraction", "Attraction"),
-        ("resturant", "Resturant"),
+        ("restaurant", "Restaurant"),
         ("beach", "Beach"),
-        ("meseum", "Meseum"),
+        ("museum", "Museum"),
         ("landmark", "Landmark"),
         ("shopping", "Shopping"),
         ("entertainment", "Entertainment"),
@@ -38,6 +40,7 @@ class Place(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     description = models.TextField()
+    image = CloudinaryField("image", default="placeholder")
     category = models.CharField(
         max_length=20,
         choices=CATEGORY_CHOICES
