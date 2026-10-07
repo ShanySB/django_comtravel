@@ -102,3 +102,30 @@ class CostInfo(models.Model):
     def __str__(self):
         return f"{self.destination} - {self.category} - {self.amount} {self.currency}"
 
+
+# Question Model 
+# Allows User to ask question
+class Question(models.Model):
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="questions"
+    )
+    destination = models.ForeignKey(
+        Destination,
+        on_delete=models.CASCADE,
+        related_name="questions"
+    )
+    place = models.ForeignKey(
+        Place,
+        on_delete=models.CASCADE,
+        related_name="questions",
+        blank=True,
+        null=True
+    )
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
