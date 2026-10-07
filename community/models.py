@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from destinations.models import Destination, Place
 
 
+# Travel Tips Model 
+# Allows users to add travel tip,
 class TravelTip(models.Model):
     author = models.ForeignKey(
         User,
@@ -31,6 +33,8 @@ class TravelTip(models.Model):
         return self.title
 
 
+# Reviews Model 
+# Allow Users to write reviws
 class Review(models.Model):
     author = models.ForeignKey(
         User,
@@ -60,3 +64,41 @@ class Review(models.Model):
 
     def __str__(self):
         return self.title
+
+
+# Cost Info Model 
+# Allows User to share cost information
+class CostInfo(models.Model):
+    CATEGORY_CHOICES = [
+        ("food", "Food"),
+        ("transport", "Transport"),
+        ("accommodation", "Accommodation"),
+        ("activities", "Activities"),
+        ("other", "Other"),
+    ]
+
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="cost_info"
+    )
+    destination = models.ForeignKey(
+        Destination,
+        on_delete=models.CASCADE,
+        related_name="cost_info"
+    )
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORY_CHOICES
+    )
+    amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2
+    )
+    currency = models.CharField(max_length=3)
+    description = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.destination} - {self.category} - {self.amount} {self.currency}"
+
