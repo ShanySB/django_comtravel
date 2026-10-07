@@ -149,4 +149,3 @@ class Answer(models.Model):
 
     def __str__(self):
         return f"Answer by {self.author} on {self.question}"
-    
