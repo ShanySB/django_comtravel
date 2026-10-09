@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from destinations.models import Place
 
 
 # Trip Model
@@ -20,3 +21,13 @@ created_on = models.DateTimeField(auto_now=True)
 
 def __str__(self):
     return f"{self.title}"
+
+
+# Itinerary Item Model
+# Allows users to add activities and plan their trips
+class ItineraryItem(models.Model):
+    trip = models.ForeignKey(
+        Trip,
+        on_delete=models.CASCADE,
+        related_name="itinerary_items"
+    )
