@@ -31,3 +31,18 @@ class ReviewAdmin(admin.ModelAdmin):
     )
     list_filter = ("approved", "rating", "destination")
     search_fields = ("title", "body", "author__username")
+
+
+# Cost Info Admin
+@admin.register(CostInfo)
+class CostInfoAdmin(admin.ModelAdmin):
+    list_display = (
+        "author",
+        "destination",
+        "category",
+        "amount",
+        "currency",
+        "created_on",
+    )
+    list_filter = ("category", "currency", "destination")
+    search_fields = ("description", "author__username")
