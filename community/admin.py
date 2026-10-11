@@ -60,3 +60,14 @@ class QuestionAdmin(admin.ModelAdmin):
     )
     list_filter = ("destination", "created_on")
     search_fields = ("title", "body", "author__username")
+
+
+# Answer Admin
+@admin.register(Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    list_display = (
+        "question",
+        "author",
+        "created_on",
+    )
+    search_fields = ("body", "author__username")
