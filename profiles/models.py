@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 # Profile Model
@@ -11,8 +12,8 @@ class Profile(models.Model):
         related_name="profile"
     )
 
-    avatar = models.ImageField(
-        upload_to="profile_images/",
+    avatar = CloudinaryField(
+        "image",
         blank=True,
         null=True
     )
