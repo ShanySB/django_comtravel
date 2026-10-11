@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Destination, Place
 
 
+# Destination Admin
 @admin.register(Destination)
 class Destination(admin.ModelAdmin):
     list_display = ("name", "country", "created_on", "updated_on")
@@ -9,6 +10,7 @@ class Destination(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
+# Place Admin
 @admin.register(Place)
 class PlaceAdmin(admin.ModelAdmin):
     list_display = (
