@@ -46,3 +46,17 @@ class CostInfoAdmin(admin.ModelAdmin):
     )
     list_filter = ("category", "currency", "destination")
     search_fields = ("description", "author__username")
+
+
+# Question Admin
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = (
+        "title",
+        "author",
+        "destination",
+        "place",
+        "created_on",
+    )
+    list_filter = ("destination", "created_on")
+    search_fields = ("title", "body", "author__username")
