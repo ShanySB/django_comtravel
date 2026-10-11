@@ -15,3 +15,19 @@ class TravelTipAdmin(admin.ModelAdmin):
     )
     list_filter = ("approved", "destination", "created_on")
     search_fields = ("title", "body", "author_username")
+
+
+# Review Admin
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = (
+        "title",
+        "author",
+        "destination",
+        "place",
+        "rating",
+        "created_on",
+        "approved",
+    )
+    list_filter = ("approved", "rating", "destination")
+    search_fields = ("title", "body", "author__username")
