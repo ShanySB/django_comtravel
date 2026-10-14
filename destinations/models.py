@@ -20,7 +20,7 @@ class Destination(models.Model):
 
 class Place(models.Model):
     """
-    Respresents a place belonging to a destination
+    Represents a place belonging to a destination
     """
     CATEGORY_CHOICES = [
         ("attraction", "Attraction"),
