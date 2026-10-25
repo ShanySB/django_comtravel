@@ -62,3 +62,33 @@ h3 {
     font-size: 1.25rem;
     line-height: 1.8;
 }
+
+/* Explore Destinations Section */
+.explore-section {
+    background-color: #ffffff;
+    padding: 5rem 1rem;
+}
+
+.explore-section h2 {
+    color: #3f8d3f;
+    margin-bottom: 1rem;
+}
+
+.explore-section p {
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.comtravel-btn {
+    background-color: #3f8d3f;
+    color: #ffffff;
+    border: 2px solid #3f8d3f;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+.comtravel-btn:hover {
+    background-color: #5ba352;
+    color: #ffffff;
+    border-color: #5ba352;
+}
