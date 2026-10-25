@@ -15,7 +15,7 @@ h3 {
     font-family: 'Playfair Display', serif;
     color: #3f8d3f;
 }
-/* Navbar */
+
 /* Navbar */
 .navbar {
     background-color: #3f8d3f;
@@ -42,4 +42,23 @@ h3 {
 
 .nav-link:hover {
     color: #ecf39e;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #d3ddbb;
+    padding: 6rem 1rem;
+}
+
+.hero-section h1 {
+    color: #3f8d3f;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+    color: #212529;
+    font-size: 1.25rem;
+    line-height: 1.8;
 }
