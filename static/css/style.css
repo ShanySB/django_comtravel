@@ -92,3 +92,27 @@ h3 {
     color: #ffffff;
     border-color: #5ba352;
 }
+
+/* Why ComTravel Section */
+.why-section {
+    background-color: #d3ddbb;
+    padding: 5rem 1rem;
+}
+
+.why-section h2 {
+    color: #3f8d3f;
+    margin-bottom: 1rem;
+}
+
+.why-section .lead {
+    color: #3f8d3f;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.why-section p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
