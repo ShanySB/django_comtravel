@@ -18,17 +18,21 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card destination-card h-100">
 
-                        {% if destination.image %}
+                        {% if destination.image|stringformat:"s" != "placeholder" %}
                             <img
                                 src="{{ destination.image.url }}"
                                 class="card-img-top destination-image"
                                 alt="{{ destination.name }}"
                             >
                         {% endif %}
-                        
-                        <div class="card-body">
+
+                        <div class="card-body d-flex flex column">
                             <h2 class="card-title">{{ destination.name }}</h2>
-                            <p class="card-text">{{ destination.country }}</p>
+                            <p class="card-text destination-country">{{ destination.country }}</p>
+
+                            <button class="btn destination-btn mt-auto" type="button">
+                                View Destination
+                            </button>
                         </div>
                     </div>
                 </div>
