@@ -17,6 +17,15 @@
             {% for destination in destinations %}
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card destination-card h-100">
+
+                        {% if destination.image %}
+                            <img
+                                src="{{ destination.image.url }}"
+                                class="card-img-top destination-image"
+                                alt="{{ destination.name }}"
+                            >
+                        {% endif %}
+                        
                         <div class="card-body">
                             <h2 class="card-title">{{ destination.name }}</h2>
                             <p class="card-text">{{ destination.country }}</p>
