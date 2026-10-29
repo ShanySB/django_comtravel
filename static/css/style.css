@@ -154,3 +154,36 @@ footer a:hover {
         margin-top: 0;
     }
 }
+
+/* Destinations Page */
+
+.destinations-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.destinations-section h1 {
+    color: #3f8d3f;
+    font-weight: 700;
+}
+
+.destination-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card .card-title {
+    color: #3f8d3f;
+    font-weight: 600;
+}
+
+.destination-card .card-text {
+    color: #5f5f5f;
+}
