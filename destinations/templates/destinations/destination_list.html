@@ -30,9 +30,10 @@
                             <h2 class="card-title">{{ destination.name }}</h2>
                             <p class="card-text destination-country">{{ destination.country }}</p>
 
-                            <button class="btn destination-btn mt-auto" type="button">
+                            <a href="{% url 'destinations:destination_detail' destination.slug %}"
+                               class="btn destination-btn mt-auto" type="button">
                                 View Destination
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
