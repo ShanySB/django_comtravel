@@ -13,11 +13,15 @@
 </section>
 
 {% if destination.image|stringformat:"s" != "placeholder" %}
-    <img
+     <img
         src="{{ destination.image.url }}"
-        class="img-fluid destination-detail-image"
+        class="card-img-top destination-image"
         alt="{{ destination.name }}"
     >
-{% endif %}
+{% else %}
+    <div class="destination-image-placeholder text-center p-5">
+    <p class="mb-0">Image coming soon</p>
+    </div>
+{% endif %}                       
 
 {% endblock %}
