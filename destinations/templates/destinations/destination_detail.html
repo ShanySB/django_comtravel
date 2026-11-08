@@ -6,7 +6,18 @@
     <div class="container">
         <h1>{{ destination.name }}</h1>
         <p>{{ destination.country }}</p>
+        <p class="destination-description">
+            {{ destination.description }}
+        </p>
     </div>
 </section>
+
+{% if destination.image|stringformat:"s" != "placeholder" %}
+    <img
+        src="{{ destination.image.url }}"
+        class="img-fluid destination-detail-image"
+        alt="{{ destination.name }}"
+    >
+{% endif %}
 
 {% endblock %}
