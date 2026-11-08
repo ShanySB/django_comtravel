@@ -204,7 +204,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}.
 
 /* Buttons*/
 .destination-btn {
@@ -222,7 +222,6 @@ footer a:hover {
 /* Destination Detail Page */
 .destination-detail-image {
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+    height: auto;
     border-radius: 10px;
 }

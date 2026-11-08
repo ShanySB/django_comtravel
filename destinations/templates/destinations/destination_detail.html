@@ -15,7 +15,7 @@
 {% if destination.image|stringformat:"s" != "placeholder" %}
      <img
         src="{{ destination.image.url }}"
-        class="card-img-top destination-image"
+        class="img-fluid destination-detail-image"
         alt="{{ destination.name }}"
     >
 {% else %}
