@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% comment %} Destination Information {% endcomment %}
 <section class="destination-detail-section">
     <div class="container">
         <h1>{{ destination.name }}</h1>
@@ -12,6 +13,8 @@
     </div>
 </section>
 
+{% comment %} Destination Information {% endcomment %}
+<section class="destination-detail-section">
 {% if destination.image|stringformat:"s" != "placeholder" %}
      <img
         src="{{ destination.image.url }}"
@@ -23,5 +26,22 @@
     <p class="mb-0">Image coming soon</p>
     </div>
 {% endif %}                       
+
+{% comment %} Associated Places {% endcomment %}
+<section class="destination-places-section">
+    <div class="container">
+        <h2>Explore Places in {{ destination.name }}</h2>
+
+        {% for place in destination.places.all %}
+            <div class="place">
+                <h3>{{ place.name }}</h3>
+                <p>{{ place.get_category_display }}</p>
+            </div>
+        {% empty %}
+            <p>No places have been added to this destination yet.</p>
+        {% endfor %}
+
+    </div>
+</section>
 
 {% endblock %}
