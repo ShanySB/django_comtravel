@@ -28,19 +28,40 @@
 {% endif %}                       
 
 {% comment %} Associated Places {% endcomment %}
-<section class="destination-places-section">
+<section class="destination-places-section py-5">
     <div class="container">
-        <h2>Explore Places in {{ destination.name }}</h2>
+        <h2 class="mb-4">Explore Places in {{ destination.name }}</h2>
 
-        {% for place in destination.places.all %}
-            <div class="place">
-                <h3>{{ place.name }}</h3>
-                <p>{{ place.get_category_display }}</p>
-            </div>
-        {% empty %}
-            <p>No places have been added to this destination yet.</p>
-        {% endfor %}
+        <div class="row">
+            {% for place in destination.places.all %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card destination-card h-100">
 
+                        {% if place.image|stringformat:"s" != "placeholder" %}
+                            <img
+                                src="{{ place.image.url }}"
+                                class="card-img-top destination-image"
+                                alt="{{ place.name }}"
+                            >
+                        {% else %}
+                            <div class="destination-image-placeholder text-center p-5">
+                                <p class="mb-0">Image coming soon</p>
+                            </div>
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h3 class="card-title">{{ place.name }}</h3>
+                            <p class="card-text">{{ place.get_category_display }}</p>
+                        </div>
+
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p>No places have been added to this destination yet.</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 
