@@ -225,3 +225,45 @@ footer a:hover {
     height: auto;
     border-radius: 10px;
 }
+
+/* Authentication pages */
+.authentication-section {
+    background-color: #f8f9fa;
+}
+
+.authentication-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.authentication-card h1 {
+    color: #3f8d3f;
+}
+
+.authentication-card label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.authentication-card input:not([type="checkbox"]):not([type="hidden"]) {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+.authentication-card .helptext {
+    font-size: 0.85rem;
+    color: #5f5f5f;
+}
+
+.authentication-card .errorlist {
+    color: #b02a37;
+    font-size: 0.9rem;
+}
+
+.authentication-card a {
+    color: #3f8d3f;
+}
