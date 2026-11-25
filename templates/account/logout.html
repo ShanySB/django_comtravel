@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% comment %} User logout confirmation {% endcomment %}
+<section class="authentication-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card authentication-card p-4">
+
+                    <h1 class="text-center mb-3">Logout</h1>
+
+                    <p class="text-center mb-4">
+                        Are you sure you want to log out of ComTravel?
+                    </p>
+
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+
+                        {{ redirect_field }}
+
+                        <button type="submit"
+                            class="btn destination-btn w-100">
+                            Logout
+                        </button>
+                    </form>
+
+                    <p class="text-center mt-4 mb-0">
+                        <a href="{% url 'home' %}">Cancel</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
