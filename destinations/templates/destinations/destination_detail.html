@@ -63,6 +63,23 @@
             {% endfor %}
         </div>
     </div>
+
+{% comment %} Visitor registration call to action {% endcomment %}
+{% if not user.is_authenticated %}
+    <section class="registration-section py-5">
+        <div class="container text-center">
+            <h2>Discover More with ComTravel</h2>
+            <p>
+                Join our travel community to share experiences,
+                ask questions and plan your next adventure.
+            </p>
+            <a href="{% url 'account_signup' %}"
+                class="btn destination-btn">
+                Register Now
+            </a>
+        </div>
+    </section>
+{% endif %}
 </section>
 
 {% endblock %}
