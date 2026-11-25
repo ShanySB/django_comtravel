@@ -95,6 +95,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Django Allauth account settings
+
 ACCOUNT_LOGIN_METHODS = {'username', 'email'}
 
 ACCOUNT_SIGNUP_FIELDS = [
@@ -109,6 +110,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
+# Development email configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
