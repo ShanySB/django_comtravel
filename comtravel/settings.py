@@ -18,6 +18,8 @@ if os.path.isfile("env.py"):
 
 import dj_database_url
 
+from django.contrib.messages import constants as messages
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p&*+3!73eq=3z^hi8ze-@_v1gcql%q&zxr&zk1cehm%&a%7$1*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'localhost']
 
@@ -126,6 +128,12 @@ DATABASES = {
     )
 }
 
+
+# Map Django message levels to Bootstrap alert classes
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
