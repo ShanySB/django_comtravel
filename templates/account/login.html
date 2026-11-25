@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% comment %} User login form {% endcomment %}
+<section class="authentication-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card authentication-card p-4">
+
+                    <h1 class="text-center mb-3">Welcome Back</h1>
+
+                    <p class="text-center mb-4">
+                        Log in to ComTravel and continue
+                        your next adventure.
+                    </p>
+
+                    <form method="post" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        {{ redirect_field }}
+
+                        <button type="submit"
+                            class="btn destination-btn w-100">
+                            Login
+                        </button>
+                    </form>
+
+                    <p class="text-center mt-4 mb-0">
+                        Don't have an account?
+                        <a href="{% url 'account_signup' %}">Register</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
