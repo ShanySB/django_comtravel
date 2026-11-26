@@ -49,9 +49,14 @@
                             </div>
                         {% endif %}
 
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">{{ place.name }}</h3>
                             <p class="card-text">{{ place.get_category_display }}</p>
+
+                             <a href="{% url 'destinations:place_detail' destination.slug place.slug %}"
+                                class="btn destination-btn mt-auto">
+                                View Place
+                            </a>
                         </div>
 
                     </div>
