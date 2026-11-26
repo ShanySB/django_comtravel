@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% comment %} Place information {% endcomment %}
+<section class="destination-detail-section py-5">
+    <div class="container">
+        <h1>{{ place.name }}</h1>
+        <p>{{ place.destination.name }}</p>
+        <p>{{ place.get_category_display }}</p>
+
+        {% if place.image|stringformat:"s" != "placeholder" %}
+            <img src="{{ place.image.url }}"
+                class="img-fluid destination-detail-image"
+                alt="{{ place.name }}">
+        {% else %}
+            <div class="destination-image-placeholder text-center p-5">
+                <p class="mb-0">Image coming soon</p>
+            </div>
+        {% endif %}
+
+        <p class="destination-description mt-4">
+            {{ place.description }}
+        </p>
+
+        <a href="{% url 'destinations:destination_detail' place.destination.slug %}"
+            class="btn destination-btn">
+            Back to {{ place.destination.name }}
+        </a>
+    </div>
+</section>
+
+{% comment %} Visitor registration call to action {% endcomment %}
+{% if not user.is_authenticated %}
+    <section class="registration-section py-5">
+        <div class="container text-center">
+            <h2>Discover More with ComTravel</h2>
+            <p>Join our travel community to share experiences,
+                ask questions and plan your next adventure.</p>
+
+            <a href="{% url 'account_signup' %}"
+                class="btn destination-btn">
+                Register Now
+            </a>
+        </div>
+    </section>
+{% endif %}
+
+{% endblock %}
