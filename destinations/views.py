@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Destination
+from .models import Destination, Place
 
 
 def destination_list(request):
@@ -25,4 +25,20 @@ def destination_detail(request, slug):
         request,
         "destinations/destination_detail.html",
         {"destination": destination}
+    )
+
+def place_detail(request, destination_slug, place_slug):
+    """
+    Display the details for a single place within a destination.
+    """
+    place = get_object_or_404(
+        Place,
+        destination__slug=destination_slug,
+        slug=place_slug
+    )
+
+    return render(
+        request,
+        "destinations/place_detail.html",
+        {"place": place}
     )
